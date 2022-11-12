@@ -23,7 +23,7 @@ jobs:
           version: '1.2.0'
 
       - name: Generate site
-        uses: BerniWittmann/background-server-action@latest
+        uses: BerniWittmann/background-server-action@1.0.4
         with:
           command: mkdir -p public && cd public && goclone http://localhost:5000
           start: http-server --path=. --port=5000
