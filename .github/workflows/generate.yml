@@ -1,0 +1,29 @@
+name: Generate example site
+on: push
+
+jobs:
+  generate-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download and set up http-server
+        uses: supplypike/setup-bin@v1
+        with:
+          uri: 'https://github.com/patrickdappollonio/http-server/releases/download/v2.0.0/http-server_2.0.0_linux_x86_64.tar.gz'
+          name: 'http-server'
+          version: 'v2.0.0'
+
+      - name: Download and set up goclone
+        uses: supplypike/setup-bin@v1
+        with:
+          uri: 'https://github.com/imthaghost/goclone/releases/download/v1.2.0/goclone_1.2.0_Linux-64bit.tar.gz'
+          name: 'goclone'
+          version: '1.2.0'
+
+      - name: Generate site
+        uses: BerniWittmann/background-server-action@latest
+        with:
+          command: mkdir -p public && cd public && goclone http://localhost:5000
+          start: http-server --path=. --port=5000

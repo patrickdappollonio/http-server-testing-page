@@ -1,0 +1,92 @@
+# `http-server` test page
+
+This is a test page for `http-server`.
+
+- [`http-server` test page](#http-server-test-page)
+  - [Markdown test section](#markdown-test-section)
+    - [Paragraphs, bold, italic, strikethrough](#paragraphs-bold-italic-strikethrough)
+    - [Images](#images)
+    - [Links](#links)
+    - [Code](#code)
+    - [Tables](#tables)
+    - [Blockquotes](#blockquotes)
+    - [Lists](#lists)
+      - [Unordered](#unordered)
+      - [Ordered](#ordered)
+    - [List checks](#list-checks)
+
+## Markdown test section
+
+This is a test section for Markdown. All headings work as intended (as seen in this page).
+
+### Paragraphs, bold, italic, strikethrough
+
+Lorem ipsum dolor sit amet, **consectetur adipiscing elit**. Sed vulputate tristique metus, _at consequat erat dignissim ac_. Aenean in ligula tempus, *rutrum neque eu*, ornare tellus. Maecenas quam risus, ornare a ultrices nec, posuere quis nunc. Nulla metus nisl, ~~bibendum vitae magna sed~~, consequat pellentesque odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a nisl eu augue pellentesque porta porttitor eget felis. Quisque facilisis feugiat justo a elementum. Suspendisse dignissim vitae felis ac commodo. Fusce vitae quam hendrerit, commodo sapien id, posuere nisl. Vestibulum fringilla at tortor cursus tempus. Nunc neque lacus, placerat non lorem id, mattis imperdiet risus.
+
+Cras et ex ligula. **Vivamus maximus id elit malesuada tincidunt**. ~~Duis vitae consequat felis~~. _Suspendisse quis risus eu sapien pharetra eleifend_. Nulla pharetra aliquet elit. Fusce gravida rhoncus nisl, in gravida augue semper ut. Nunc ac ex tempus, feugiat velit id, viverra justo.
+
+<sub>Hello</sub> <sup>World</sup>!
+
+### Images
+
+![Sample image from folder](images/laptop-computer-on-wooden-table.jpg)
+
+### Links
+
+[Link to Google](https://www.google.com)
+
+[Link within the same page](#http-server-test-page)
+
+[Link to a folder](subfolder-markdown)
+
+[Link to a file](images/a-small-green-bird-sits-on-thin-branch-in-a-green-tree.jpg)
+
+### Code
+
+The following code fence is set to Javascript, however there's no syntax highlighting.
+
+```js
+let foo = "bar";
+
+console.log(foo);
+
+myfunc(() => {
+  console.log("callback");
+});
+```
+
+### Tables
+
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+
+### Blockquotes
+
+> This is a blockquote.
+
+### Lists
+
+#### Unordered
+
+* Item 1
+* Item 2
+  * Sub-item 1
+  * Sub-item 2
+* Item 3
+
+#### Ordered
+
+1. Item 1
+2. Item 2
+   1. Sub-item 1
+   2. Sub-item 2
+3. Item 3
+
+### List checks
+
+- [x] This is a checked list item
+- [ ] This is an unchecked list item
+  - [ ] This is an unchecked list sub-item
+  - [x] This is a checked list sub-item
