@@ -1,0 +1,127 @@
+/* Basic reset and layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* We'll use custom properties for theme colors */
+:root {
+  --bg-color: #f3f3f3;
+  --text-color: #333;
+  --primary-color: #6200ea;
+}
+
+/* Default (light) theme */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+/* Dark theme override */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f2f2f2;
+}
+
+/* Navigation styling */
+nav {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 0.75rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  padding: 1rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main h2 {
+  margin: 1rem 0 0.5rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section li {
+  margin-left: 1.5rem;
+}
+
+/* Footer styling */
+footer {
+  background-color: #ccc;
+  padding: 1rem;
+  text-align: center;
+}
+
+#date-holder {
+  display: inline-block;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#theme-toggle:hover {
+  filter: brightness(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav h1,
+  nav ul {
+    margin: 0.5rem 0;
+  }
+  nav li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}

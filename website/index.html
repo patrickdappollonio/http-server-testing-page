@@ -1,2 +1,65 @@
-<h1>This is a website</h1>
-<p>It uses all the default settings from your browser, but it can include CSS, HTML and more.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic HTML5 Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <h1>My Awesome Demo Site</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>
+        This is a basic HTML5 site with some CSS and JavaScript demonstration.
+        Click the button below to toggle between light and dark themes!
+      </p>
+      <button id="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Responsive Layout</li>
+        <li>Modern Design</li>
+        <li>Dark/Light Theme</li>
+      </ul>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        This simple page showcases:
+      </p>
+      <ul>
+        <li>Basic HTML5 structure</li>
+        <li>CSS styling (responsive, transitions)</li>
+        <li>JavaScript for theme toggling</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <div id="date-holder"></div> My Awesome Demo
+  </footer>
+
+  <!-- JavaScript at the bottom for performance -->
+  <script src="main.js"></script>
+
+  <script type="text/javascript">
+    // Get the current year
+    document.getElementById('date-holder').innerHTML = new Date().getFullYear();
+  </script>
+</body>
+</html>

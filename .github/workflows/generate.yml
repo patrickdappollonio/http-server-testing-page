@@ -1,29 +1,50 @@
 name: Generate example site
-on: push
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   generate-site:
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: "https://patrickdappollonio.github.io/http-server-testing-page/"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Download and set up http-server
-        uses: supplypike/setup-bin@v1
         with:
-          uri: 'https://github.com/patrickdappollonio/http-server/releases/download/v2.0.0/http-server_2.0.0_linux_x86_64.tar.gz'
-          name: 'http-server'
-          version: 'v2.0.0'
+          fetch-depth: 0
 
-      - name: Download and set up goclone
-        uses: supplypike/setup-bin@v1
+      - name: Set up http-server
+        uses: jaxxstorm/action-install-gh-release@v1.10.0
         with:
-          uri: 'https://github.com/imthaghost/goclone/releases/download/v1.2.0/goclone_1.2.0_Linux-64bit.tar.gz'
-          name: 'goclone'
-          version: '1.2.0'
+          repo: patrickdappollonio/http-server
+          platform: linux
+          arch: x86_64
 
-      - name: Generate site
-        uses: BerniWittmann/background-server-action@1.0.4
+      - name: Run http-server and create a copy of the website
+        run: |
+          set -e
+          rm -rf .git/ .github/ output/
+          mkdir /tmp/output
+          http-server -p 8080 &
+          SERVER_PID=$!
+          sleep 5
+          cd /tmp/output && wget -r -k -E -p --restrict-file-names=windows -nH "http://localhost:8080/"
+          kill -9 $SERVER_PID || true
+
+      - name: Upload artifacts to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          command: mkdir -p public && cd public && goclone http://localhost:5000
-          start: http-server --path=. --port=5000
+          path: /tmp/output
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

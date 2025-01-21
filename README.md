@@ -2,18 +2,21 @@
 
 This is a test page for `http-server`.
 
-- [`http-server` test page](#http-server-test-page)
-  - [Markdown test section](#markdown-test-section)
-    - [Paragraphs, bold, italic, strikethrough](#paragraphs-bold-italic-strikethrough)
-    - [Images](#images)
-    - [Links](#links)
-    - [Code](#code)
-    - [Tables](#tables)
-    - [Blockquotes](#blockquotes)
-    - [Lists](#lists)
-      - [Unordered](#unordered)
-      - [Ordered](#ordered)
-    - [List checks](#list-checks)
+This page is generated automatically by `http-server` using the latest release found in the [original repository](https://github.com/patrickdappollonio/http-server). The page is generated using a GitHub Action and contains examples of most of the supported features by the server.
+
+Below, you'll find some examples of Markdown content. The [`file-types`](file-types) folder contains examples of different file types that can be served by `http-server`, [`images`](images) contains images, and [`subfolder-markdown`](subfolder-markdown) contains a subfolder with a Markdown `README` file that automatically renders when entering the site.
+
+Finally, [`website/`](website) contains a simple, pure HTML website that can be served by `http-server` and is used to test the practical flow of the server.
+
+For all these actions, the command executed to start the server is:
+
+```sh
+http-server --port 8000
+```
+
+And `wget` is used in crawl mode to download the website and all its contents, creating a static copy.
+
+For more information, visit the [original repository](https://github.com/patrickdappollonio/http-server).
 
 ## Markdown test section
 
