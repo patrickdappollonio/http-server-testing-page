@@ -35,7 +35,8 @@ jobs:
           set -e
           rm -rf .git/ .github/ output/
           mkdir /tmp/output
-          http-server -p 8080 &
+          message='This is a testing page for [`http-server`](https://github.com/patrickdappollonio/http-server). For more information, visit the official repository.'
+          http-server -p 8080 --banner "$message" &
           SERVER_PID=$!
           sleep 5
           cd /tmp/output && wget -r -k -E -p --restrict-file-names=windows -nH "http://localhost:8080/"
