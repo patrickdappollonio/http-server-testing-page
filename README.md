@@ -30,6 +30,39 @@ Cras et ex ligula. **Vivamus maximus id elit malesuada tincidunt**. ~~Duis vitae
 
 <sub>Hello</sub> <sup>World</sup>!
 
+### Admonitions
+
+These are all the admonitions supported by `http-server`, following the implementation on GitHub Markdown:
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+>
+> This is a second paragraph of the note.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+### Foot notes
+
+This is a footnote[^1] and this is another one[^2].
+
+[^1]: This is a footnote.
+
+[^2]: This is another footnote.
+
+### MermaidJS Diagrams
+
+This example is in the [`mermaid-example.md` file](mermaid-example.md).
+
 ### Images
 
 ![Sample image from folder](images/laptop-computer-on-wooden-table.jpg)
